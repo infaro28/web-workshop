@@ -5,11 +5,6 @@ var students = [
     {id: 4, name: "Karla", score: 48},
 ];
 
-// document.write(students.length);
-//document.write("<pre class='alert alert-secondary'>");
-//document.write(JSON.stringitgify(students, undefined, 2));
-//document.write("</pre>");
-
 var ids = [];
 students.forEach(student => {
     ids.push(student.id);
@@ -24,6 +19,13 @@ var scores = [];
 students.forEach(score => {
     scores.push(score.score);
 })
+
+// document.write(students.length);
+//document.write("<pre class='alert alert-secondary'>");
+//document.write(JSON.stringitgify(students, undefined, 2));
+//document.write("</pre>");
+
+
 
 //document.writeln(ids);
 //document.writeln(scores);
@@ -49,27 +51,12 @@ students.forEach(score => {
 //     } 
 // }
 
-function calculo(){
-    let sum = scores.reduce((previus, current) => current += previus);
-    let avg = sum / scores.length;
-    return avg
-}
-
-function Average(){
-    let averageprint = document.getElementById("averageprint");
-    let avg = calculo();
-    console.log(avg)
-
-    //averageprint.innerText = avg
-    averageprint.innerHTML = avg
-    averageprint.classList.add("badge", "badge-info");
-}
-
 function add(){
     var studentName= document.getElementById('studentName').value
     var studentScore = parseInt(document.getElementById('studentScore').value)
     var studentID =parseInt(document.getElementById('studentID').value)
     students.push({id: studentID, name: studentName, score: studentScore})
+    scores.push(studentScore)
 
     table()
 }
@@ -118,3 +105,19 @@ function table(){
 }
 
 
+
+function calculo(){
+    let sum = scores.reduce((previus, current) => current += previus);
+    let avg = sum / scores.length;
+    return avg
+}
+
+function Average(){
+    let averageprint = document.getElementById("averageprint");
+    let avg = calculo();
+    console.log(avg)
+
+    //averageprint.innerText = avg
+    averageprint.innerHTML = avg
+    averageprint.classList.add("badge", "badge-info");
+}
