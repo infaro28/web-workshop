@@ -6,9 +6,9 @@ var students = [
 ];
 
 // document.write(students.length);
-document.write("<pre class='alert alert-secondary'>");
-document.write(JSON.stringify(students, undefined, 2));
-document.write("</pre>");
+//document.write("<pre class='alert alert-secondary'>");
+//document.write(JSON.stringify(students, undefined, 2));
+//document.write("</pre>");
 
 var ids = [];
 students.forEach(student => {
@@ -25,30 +25,29 @@ students.forEach(score => {
     scores.push(score.score);
 })
 
-document.writeln(ids);
-document.writeln(scores);
-document.writeln(names);
+//document.writeln(ids);
+//document.writeln(scores);
+//document.writeln(names);
 
+// function loadData(){
 
-function loadData(){
-
-    var i = 0;
-    let dataList =  document.getElementById("dataList");
+//     var i = 0;
+//     let dataList =  document.getElementById("dataList");
     
 
-    while(i < students.length){
+//     while(i < students.length){
        
-        var listItem = document.createElement("li");
+//         var listItem = document.createElement("li");
     
-        console.log(students[i]);
-        listItem.innerText = students[i].id + students[i].name + students[i].score;
+//         console.log(students[i]);
+//         listItem.innerText = students[i].id + students[i].name + students[i].score;
 
-        dataList.appendChild(listItem);
+//         dataList.appendChild(listItem);
         
-        i = i + 1; // alternative i++
+//         i = i + 1; // alternative i++
         
-    } 
-}
+//     } 
+// }
 
 function calculo(){
     let sum = scores.reduce((previus, current) => current += previus);
@@ -61,18 +60,25 @@ function Average(){
     let avg = calculo();
     console.log(avg)
 
-    averageprint.innerText = avg
+    //averageprint.innerText = avg
     averageprint.innerHTML = avg
-    averageprint.classList.add("badge");
-    averageprint.classList.add("badge-info");
+    averageprint.classList.add("badge", "badge-info");
+}
+
+function add(){
+    var studentName= document.getElementById('studentName').value
+    var studentScore = parseInt(document.getElementById('studentScore').value)
+    var studentID =parseInt(document.getElementById('studentID').value)
+    students.push({id: studentID, name: studentName, score: studentScore})
+
+    table()
 }
 
 function table(){
     
     var i = 0;
     let dataList =  document.getElementById("dataList");
-    
-
+    dataList.innerHTML=''
     while(i < students.length){
        
         var listItem = document.createElement("section");
@@ -95,17 +101,20 @@ function table(){
         listItem.appendChild(score);
         score.classList.add("col");
 
-        dataList.appendChild(listItem);  
-        i = i + 1; // alternative i++
+        
 
         if(students[i].score < 60){
             score.classList.add("badge");
             //score.classList.add("badge-pill");
             score.classList.add("badge-danger");
         }
+
+        dataList.appendChild(listItem);  
+        i = i + 1; // alternative i++
         
     }
 
    
 }
+
 
