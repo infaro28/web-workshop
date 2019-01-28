@@ -7,7 +7,7 @@ var students = [
 
 // document.write(students.length);
 //document.write("<pre class='alert alert-secondary'>");
-//document.write(JSON.stringify(students, undefined, 2));
+//document.write(JSON.stringitgify(students, undefined, 2));
 //document.write("</pre>");
 
 var ids = [];
