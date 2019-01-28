@@ -91,9 +91,9 @@ function table(){
         
 
         if(students[i].score < 60){
-            score.classList.add("badge");
-            //score.classList.add("badge-pill");
-            score.classList.add("badge-danger");
+            score.classList.add("lowscore");
+            
+            
         }
 
         dataList.appendChild(listItem);  

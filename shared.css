@@ -5,3 +5,13 @@ body {
 .highlight {
     background-color: yellow;
 }
+
+.lowscore{
+    color: red;
+    font-weight: bold;
+
+}
+
+.btn btn-info{
+    border-radius: 10em 10em 10em 10em;
+}
