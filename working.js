@@ -1,9 +1,9 @@
-var students = [
-    {id: 1,name: "John",score: 90 },
-    {id: 2, name: "Larry", score: 60},
-    {id: 3, name: "Joseph", score: 50},
-    {id: 4, name: "Karla", score: 48},
-];
+//var students = [
+  //  {id: 1,name: "John",score: 90 },
+    //{id: 2, name: "Larry", score: 60},
+    //{id: 3, name: "Joseph", score: 50},
+    //{id: 4, name: "Karla", score: 48},
+//];
 
 var ids = [];
 students.forEach(student => {
@@ -92,7 +92,7 @@ function table(){
 
         if(students[i].score < 60){
             score.classList.add("lowscore");
-            
+
             
         }
 
