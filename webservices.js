@@ -21,7 +21,7 @@ function fetchData(){
       remoteStudents.forEach(element => {
        students.push(element);
       });
-     loadDataGrid();
+     table();
 
     };
 
